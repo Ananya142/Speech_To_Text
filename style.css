@@ -1,0 +1,80 @@
+/* Page background and layout */
+body {
+  background: #f4f7fa;
+  height: 100vh;
+  margin: 0;
+  font-family: "Cambria", "Times New Roman", serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: #333;
+}
+
+/* Heading */
+h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2.5rem;
+  color: #2c3e50;
+}
+
+/* Result container */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  width: 500px;
+  background-color: #ecf9f1;
+  border: 2px solid #27ae60;
+  border-radius: 12px;
+  font-size: 1.5rem;
+  padding: 1rem;
+  margin: 2rem;
+  text-align: center;
+  overflow-y: auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Button styles */
+.button-three {
+  text-align: center;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: bold;
+  position: relative;
+  background-color: #f39c12;
+  border: none;
+  border-radius: 8px;
+  padding: 15px 25px;
+  margin: 10px;
+  width: 220px;
+  transition: all 0.3s ease;
+  color: #fff;
+}
+
+.button-three:hover {
+  background: #e67e22;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
+}
+
+.button-three:active {
+  transform: scale(0.97);
+}
+
+/* Mobile responsiveness */
+@media (max-width: 600px) {
+  .container {
+    width: 90%;
+    height: 150px;
+    font-size: 1.2rem;
+  }
+
+  .button-three {
+    width: 90%;
+    font-size: 18px;
+    padding: 12px;
+  }
+}
