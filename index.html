@@ -7,19 +7,70 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Welcome To World Of Coders</h1>
+  <h1>Speech to Text Converter</h1>
   
-  <button class="button-three" id="btn">
-    🎤 Start Speech To Text
-  </button>
+  <div class="controls">
+    <select id="language" class="language-select">
+      <option value="en-US">English (US)</option>
+      <option value="en-GB">English (UK)</option>
+      <option value="es-ES">Spanish</option>
+      <option value="fr-FR">French</option>
+      <option value="de-DE">German</option>
+      <option value="it-IT">Italian</option>
+      <option value="pt-BR">Portuguese (BR)</option>
+      <option value="ja-JP">Japanese</option>
+      <option value="ko-KR">Korean</option>
+      <option value="zh-CN">Chinese (Mandarin)</option>
+    </select>
+    
+    <label class="toggle">
+      <input type="checkbox" id="continuous">
+      <span class="toggle-slider"></span>
+      Continuous Listening
+    </label>
+  </div>
+  
+  <div class="button-group">
+    <button class="button-primary" id="btn">
+      <span class="button-icon">🎤</span>
+      <span class="button-text">Start Listening</span>
+    </button>
+    
+    <button class="button-secondary" id="stopBtn" disabled>
+      <span class="button-icon">⏹️</span>
+      <span class="button-text">Stop</span>
+    </button>
+  </div>
+  
+  <div class="status-container">
+    <div id="status" class="status-text">Ready to listen</div>
+    <div id="listeningIndicator" class="listening-indicator" style="display: none;">
+      <div class="pulse-ring"></div>
+      <div class="pulse-ring pulse-ring-delay"></div>
+      <span>Listening...</span>
+    </div>
+  </div>
   
   <div id="result" class="container">
     <p id="text">Your speech will appear here...</p>
   </div>
   
-  <button class="button-three" onclick="copyDivToClipboard()">
-    📋 Copy the text
-  </button>
+  <div class="button-group">
+    <button class="button-secondary" onclick="copyDivToClipboard()">
+      <span class="button-icon">📋</span>
+      <span class="button-text">Copy Text</span>
+    </button>
+    
+    <button class="button-secondary" onclick="clearText()">
+      <span class="button-icon">🗑️</span>
+      <span class="button-text">Clear</span>
+    </button>
+    
+    <button class="button-secondary" onclick="downloadText()">
+      <span class="button-icon">💾</span>
+      <span class="button-text">Download</span>
+    </button>
+  </div>
 
   <script src="script.js"></script>
 </body>
